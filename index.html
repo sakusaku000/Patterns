@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <!--Meta-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Patterns</title>
+        <!--CSS-->
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap">
+        <link rel="stylesheet" href="css/anim.css">
+        <link rel="stylesheet" href="css/patterns-1348.css">
+        <!--Main Script-->
+        <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <script src="js/PatternsGamev3.js"></script>
+        <script src="js/PatternsGameKeyboard.js"></script>
+    </head>
+
+    <body class="darkTheme">
+        <!--Title Screen-->
+        <div id="TitleScreen" align="center" style="display:none;">
+            <div id="Title" class="centerScreen">
+                <h1 id="TitleString" style="font-size:7rem;"><b>Patterns</b></h1>
+                <span id="SubtitleString" style="position:relative; top:-20px;">By Saku ♡</span><br>
+                <a id="TitlePlayBtn" style="font-size:1.5rem;" onclick="PlayGame()">Play</a>
+            </div>
+        </div>
+
+        <!-- Game -->
+        <div id="Game" class="centerScreen" style="display:none;" align="center">
+            <!-- Boxes -->
+            <div id="DesktopGame" class="container">
+                <div class="row justify-content-center" align="center">
+                    <div class="PtrnBox PtrnBoxGhost" id="Red" style="background-color:rgb(224, 50, 50); z-index:3;" onclick="BoxPress('Red')"></div>
+                    <div class="PtrnBox PtrnBoxGhost" id="Green" style="background-color:rgb(92, 202, 59); z-index:2;" onclick="BoxPress('Green')"></div>
+                    <div class="PtrnBox PtrnBoxGhost" id="Yellow" style="background-color:rgb(255, 239, 98); z-index:1;" onclick="BoxPress('Yellow')"></div>
+                    <div class="PtrnBox PtrnBoxGhost" id="Blue" style="background-color:rgb(83, 193, 226); z-index:0;" onclick="BoxPress('Blue')"></div>
+                </div>
+            </div>
+            <!--Combo Status-->
+            <h1 id="status" style="margin-top:100px;">Combo: 0</h1>
+            <!--Fail Screen-->
+            <div id="FailBox" style="display:none;">
+                <h1 id="FailTitle" style="font-size:7rem;"><b>You lose</b></h1>
+                <h2 id="FailCombo">Your combo was Loading</h2><br>
+                <a id="FailResetBtn" style="font-size:1.5rem;" onclick="Reload()">Play Again</a><br>
+            </div>
+        </div>
+
+        <!--Top Layer Elements-->
+        <!--Options-->
+        <div id="Options" style="position:fixed; bottom:10px; right:10px;">
+            <a id="ThemeToggle" class="text-focus-in" onclick="ThemeToggle()">Toggle Light/Dark</a>
+        </div>
+
+        <!-- Sounds -->
+        <audio id="start" src="sound/start.wav" type="audio/vnd.wave"></audio>
+        <audio id="success" src="sound/win.wav" type="audio/vnd.wave"></audio>
+        <audio id="fail" src="sound/fail.mp3" type="audio/mpeg"></audio>
+        <audio id="RedSound" src="sound/red.mp3" type="audio/mpeg"></audio>
+        <audio id="GreenSound" src="sound/green.mp3" type="audio/mpeg"></audio>
+        <audio id="YellowSound" src="sound/yellow.mp3" type="audio/mpeg"></audio>
+        <audio id="BlueSound" src="sound/blue.mp3" type="audio/mpeg"></audio>
+    </body>
+</html>
